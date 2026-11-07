@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Binary Search Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Binary Search on Answer Space</h1>
+        <p>Learn Algorithms Through Interactive Exploration</p>
+    </header>
+
+    <main>
+
+        <section class="intro">
+            <h2>Welcome to Algorithm Learning!</h2>
+
+            <p>
+                Discover how Binary Search on Answer Space
+                helps us find the optimal solution efficiently.
+            </p>
+        </section>
+
+        <section class="intro">
+            <h2>Real-World Problem: Package Delivery</h2>
+
+            <p>
+                A delivery company must deliver packages in the
+                given order within a limited number of days.
+                Find the minimum truck capacity required.
+            </p>
+
+            <div class="input-area">
+                <label for="weights">Package weights (comma separated):</label>
+                <input
+                    type="text"
+                    id="weights"
+                    value="1,2,3,4,5,6,7,8,9,10"
+                >
+
+                <label for="days">Number of delivery days:</label>
+                <input
+                    type="number"
+                    id="days"
+                    value="5"
+                    min="1"
+                >
+
+                <button onclick="startLearning()">
+                    Find Minimum Capacity
+                </button>
+            </div>
+        </section>
+<section class="intro concept-section">
+    <h2>Understand Binary Search on Answer Space</h2>
+
+    <h3>1. What is Binary Search?</h3>
+    <p>
+        Binary Search is an efficient searching technique.
+        Instead of checking every possible value one by one,
+        it checks the middle value and reduces the search range.
+    </p>
+
+    <h3>2. What is Binary Search on Answer Space?</h3>
+    <p>
+        Sometimes we need to find the minimum or maximum
+        possible answer to a problem. We can use Binary Search
+        on the range of possible answers.
+    </p>
+
+    <p>
+        In our package delivery problem, we need to find the
+        minimum truck capacity required to deliver all packages
+        within the given number of days.
+    </p>
+
+    <h3>3. Understand Low, High and Mid</h3>
+
+    <ul>
+        <li><b>Low:</b> The smallest possible truck capacity.
+            It is the weight of the heaviest package.</li>
+
+        <li><b>High:</b> The largest possible truck capacity.
+            It is the total weight of all packages.</li>
+
+        <li><b>Mid:</b> The middle capacity we are checking.</li>
+    </ul>
+
+    <h3>4. What is the Feasibility Check?</h3>
+    <p>
+        We check whether the truck can deliver all packages
+        within the allowed number of days using the selected
+        capacity.
+    </p>
+
+    <ul>
+        <li>
+            If the capacity is valid, save the answer and
+            search for a smaller capacity.
+        </li>
+        <li>
+            If the capacity is invalid, increase the capacity
+            and search the right side.
+        </li>
+    </ul>
+
+    <h3>5. When does Binary Search stop?</h3>
+    <p>
+        Binary Search stops when Low becomes greater than High.
+        The saved answer is the minimum valid truck capacity.
+    </p>
+
+    <h3>6. Real-world example</h3>
+    <p>
+        Imagine a delivery company needs to deliver packages
+        within five days. It wants to use the smallest possible
+        truck capacity to save transportation costs.
+        Binary Search helps find that minimum capacity efficiently.
+    </p>
+</section>
+<section class="intro quiz-section">
+    <h2>Test Your Knowledge: Binary Search Quiz</h2>
+
+    <p>
+        Answer these questions to check your understanding.
+        Select one option for each question.
+    </p>
+
+    <div id="quizContainer"></div>
+
+    <button onclick="submitQuiz()">Submit Quiz</button>
+    <button onclick="resetQuiz()">Try Again</button>
+
+    <div id="quizResult"></div>
+</section>
+  <section class="intro complexity-section">
+    <h2>Time and Space Complexity</h2>
+
+    <h3>1. What is Time Complexity?</h3>
+    <p>
+        Time Complexity explains how the running time of an
+        algorithm grows as the input size increases.
+    </p>
+
+    <h3>2. Time Complexity of Binary Search on Answer Space</h3>
+    <p>
+        In our problem, we search for the minimum truck capacity
+        between Low and High.
+    </p>
+
+    <p>
+        Binary Search divides the search range approximately
+        in half during every iteration.
+    </p>
+
+    <p><b>Time Complexity: O(n × log(S - M + 1))</b></p>
+
+    <ul>
+        <li><b>n:</b> Number of packages.</li>
+        <li><b>S:</b> Sum of all package weights.</li>
+        <li><b>M:</b> Maximum package weight.</li>
+        <li><b>log:</b> Number of times the search range is halved.</li>
+    </ul>
+
+    <p>
+        Why O(n × log(S - M + 1))?
+        Each Binary Search iteration runs the feasibility check,
+        which visits all n packages. The number of iterations
+        depends on the size of the capacity search range.
+    </p>
+
+    <h3>3. What is Space Complexity?</h3>
+    <p>
+        Space Complexity explains how much additional memory
+        an algorithm uses as the input size grows.
+    </p>
+
+    <p><b>Auxiliary Space Complexity: O(1)</b></p>
+
+    <p>
+        Our feasibility check and Binary Search use only a
+        fixed number of extra variables such as Low, High,
+        Mid, Days Needed and Current Load.
+    </p>
+
+    <p>
+        Note: This O(1) space does not include the input
+        package list or the memory used to store the result.
+    </p>
+
+    <h3>4. Why is Binary Search efficient?</h3>
+    <p>
+        Checking every possible capacity one by one can be slow.
+        Binary Search reduces the search range in every iteration,
+        making it much more efficient.
+    </p>
+
+    <h3>5. Complexity Summary</h3>
+
+    <ul>
+        <li><b>Feasibility Check:</b> O(n)</li>
+        <li><b>Binary Search Iterations:</b> O(log(S - M + 1))</li>
+        <li><b>Overall Time Complexity:</b> O(n × log(S - M + 1))</li>
+        <li><b>Auxiliary Space Complexity:</b> O(1)</li>
+    </ul>
+</section>
+<section class="intro">
+    <h2>Interactive Binary Search Simulator</h2>
+
+    <p>
+        Click the button to explore how the algorithm
+        searches for the minimum truck capacity.
+    </p>
+
+    <button onclick="initializeSimulation()">
+        Start Simulation
+    </button>
+
+    <div id="simulation">
+        <h3>Algorithm Values</h3>
+
+        <p>Low: <span id="lowValue">-</span></p>
+        <p>High: <span id="highValue">-</span></p>
+        <p>Mid: <span id="midValue">-</span></p>
+        <div id="rangeVisualization">
+    <h3>Search Range Visualization</h3>
+    <div id="rangeNumbers"></div>
+    <p id="rangeExplanation">
+        Start the simulation to see the search range.
+    </p>
+    <button onclick="resetSimulation()">
+    Reset Simulation
+</button>
+
+<div class="progress-container">
+    <div id="progressBar"></div>
+</div>
+
+<p id="progressText">Progress: 0%</p>
+</div>
+        <p id="simulationStatus">
+            Click Start Simulation to begin.
+        </p>
+
+        <button onclick="nextStep()">
+            Next Step
+        </button>
+
+        <div id="simulationResult"></div>
+    </div>
+</section>
+
+
+        <section class="intro">
+            <h2>What did we learn?</h2>
+
+            <p>
+                Binary Search repeatedly divides the search
+                range into two halves to find the minimum
+                valid answer efficiently.
+            </p>
+        </section>
+        
+<section class="intro">
+    <h2>Visualize Package Delivery</h2>
+
+    <p>
+        See how packages are distributed across delivery
+        days based on the selected truck capacity.
+    </p>
+
+    <label for="deliveryCapacity">
+        Enter Truck Capacity:
+    </label>
+
+    <input
+        type="number"
+        id="deliveryCapacity"
+        value="15"
+        min="1"
+    >
+
+    <br><br>
+
+    <button onclick="showDeliveryPlan()">
+        Show Delivery Plan
+    </button>
+
+    <div id="deliveryPlan"></div>
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

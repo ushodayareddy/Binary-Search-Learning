@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+/* Package delivery visualization */
+
+#deliveryCapacity {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.delivery-card {
+    background: #f8fafc;
+    border-left: 5px solid #2563eb;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.delivery-card h3 {
+    color: #1d4ed8;
+}
+
+.capacity-bar {
+    height: 12px;
+    background: #dbeafe;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.capacity-fill {
+    height: 100%;
+    background: #16a34a;
+    border-radius: 20px;
+}
+
+.delivery-summary {
+    margin-top: 20px;
+    color: #1d4ed8;
+}
+
+.valid-message {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.invalid-message {
+    color: #dc2626;
+    font-weight: bold;
+}
+/* Binary Search Range Visualization */
+
+#rangeVisualization {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+#rangeNumbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.range-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 35px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #e2e8f0;
+    font-weight: bold;
+}
+
+.low-number {
+    background: #bfdbfe;
+    color: #1e40af;
+}
+
+.high-number {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.mid-number {
+    background: #bbf7d0;
+    color: #166534;
+    border: 2px solid #16a34a;
+}
+/* Simulation progress bar */
+
+.progress-container {
+    width: 100%;
+    height: 18px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #16a34a;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#progressText {
+    font-weight: bold;
+    color: #166534;
+    margin-top: 8px;
+}
+
+#simulation button {
+    margin: 8px 5px;
+}
+/* Beginner-friendly concept explanation */
+
+.concept-section {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.concept-section h2 {
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 20px;
+}
+
+.concept-section h3 {
+    color: #2563eb;
+    margin-top: 22px;
+}
+
+.concept-section p,
+.concept-section li {
+    color: #334155;
+    font-size: 16px;
+}
+
+.concept-section ul {
+    padding-left: 25px;
+}
+/* Interactive Quiz Styling */
+
+.quiz-section {
+    text-align: left;
+}
+
+.quiz-section h2 {
+    text-align: center;
+    color: #1d4ed8;
+}
+
+.quiz-card {
+    background: #f8fafc;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
+.quiz-card h3 {
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+.quiz-option {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.quiz-option input {
+    margin-right: 8px;
+}
+
+.correct-answer {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.incorrect-answer {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+#quizResult {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #eff6ff;
+}
+/* Time and Space Complexity Section */
+
+.complexity-section {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.complexity-section h2 {
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 20px;
+}
+
+.complexity-section h3 {
+    color: #2563eb;
+    margin-top: 22px;
+}
+
+.complexity-section p,
+.complexity-section li {
+    color: #334155;
+    font-size: 16px;
+}
+
+.complexity-section ul {
+    padding-left: 25px;
+}
+/* Responsive Design */
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .intro {
+        padding: 18px;
+        margin: 15px 0;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    input {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #rangeNumbers {
+        gap: 5px;
+    }
+
+    .range-number {
+        min-width: 28px;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .intro,
+    #simulation,
+    .quiz-card,
+    .delivery-card {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p,
+    li,
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    .range-number {
+        min-width: 24px;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    #rangeNumbers {
+        gap: 4px;
+    }
+
+    .capacity-bar {
+        height: 10px;
+    }
+}
